@@ -21,6 +21,19 @@ mkdir views + touch views/landing.ejs
 Inside app.js set up view engine ejs, this way no .ejs required.
 app.set("view engine", "ejs");
 
+*setup new campground POST route
+    app.post("/campgrounds", function(req, res){
+    //get data from form and add to campground array
+    //redirect back to campgrounds page
+});
+# if you use app.post you can name it the same as the app.get because one is for adding content and the other for showing it. 
+*add in body-parser
+npm install body-parser --save
+var bodyParser = require("body-parser);
+app.use(bodyParser.urlencoded({extended: true}));
+*Setup route to show form
+*add basic unstyled form
+
 
 
 
