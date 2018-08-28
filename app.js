@@ -19,6 +19,7 @@ app.get("/campgrounds", function(req, res) {
 });
 
 app.post("/campgrounds", function(req, res){
+    res.send("you entered the post route");
     //get data from form and add to campground array
     //redirect back to campgrounds page
 });
@@ -30,3 +31,5 @@ app.get("/campgrounds/new", function (req, res) {
 app.listen(8080, "localhost", function () {
     console.log("YelpCamp Server Has Started");
 });
+
+//wat gebleven bij 8.22 min
