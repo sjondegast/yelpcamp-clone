@@ -1,10 +1,16 @@
 <% include partials/header %>
 <div class="container">
     <header class="jumbotron">
-        <h1>This is the Campgrounds Page</h1>
+        <div class="container">
+            <h1>Welcome to YelpCamp</h1>
+            <p>View are hand-picked campgrounds form all over the world</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new Campground</a>
+            </p>
+        </div>
     </header>
 
-    <a href="/campgrounds/new">Add new Campground</a>
+    
 
     <% campgrounds.forEach(function(campground){ %>
         <div>
