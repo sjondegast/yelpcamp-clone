@@ -34,7 +34,29 @@ app.use(bodyParser.urlencoded({extended: true}));
 *Setup route to show form
 *add basic unstyled form
 
+-----mongodb-----
+terminal:
+installation: brew install mongodb
+Create a directory: mkdir root/data
+    the root directory is the directory of the project, in this case it's YelpCamp. this is not de default, so we need  to tell mongodb we're it is.
+first we have to get the full path of the directory in the terminal:
+cd into data, then type + enter/return: pwd.
+result: /Users/sjondegast/stack/Development/YelpCamp/data
+point mongodb to the right directory #data: 
+mongod --dbpath /Users/sjondegast/stack/Development/YelpCamp/data --nojounal
+Give mongodb read/write permissions: 
+add the data folder for mongodb to the gitignore file!!!
 
+This down here you have to do from the data directory or specify the path.
+to start, use mongod to start demon.
+In another terminal window do mongo, this will start the server
+ctrl + C will stop the server
+
+inside the terminal:
+mongod, mongo, help, show dbs, use, insert, find, update, remove
+
+example: > --help will provide info
+        > db.use.nameOfDatabase
 
 
 ----- Q&A ----
