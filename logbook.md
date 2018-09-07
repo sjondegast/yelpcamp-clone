@@ -107,6 +107,15 @@ app.get("/campgrounds/:id", function (req, res) {
 });
 #this needs to be after campgrounds/new route because otherwise it will be treated as campgrounds/:id!!!!!
 
+- add description to campgroundSchema
+- remove all campgrounds from db, this happends sometimes. In this case we added a description to the schema, because of this we empty the db.
+- first make sure you are in the right place!!
+show collections
+db.campgrounds.find()
+db.campgrounds.drop() #this will drop all campgrounds from the collection
+if succesfull it will say true
+
+
 
 RESTFUL ROUTES
 
