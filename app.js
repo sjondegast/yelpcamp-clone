@@ -20,6 +20,7 @@ app.get("/", function (req, res) {
     res.render("landing");   
 });
 
+//INDEX ROUTE - show all campgrounds
 app.get("/campgrounds", function(req, res) {
     // Get all campgrounds from DB: Campgrounds.find()
     Campground.find({}, function (err, campgrounds) {
@@ -31,6 +32,7 @@ app.get("/campgrounds", function(req, res) {
     });
 });
 
+//CREATE ROUTE - add new campground to database and redirect to /camgrounds also known as INDEX
 app.post("/campgrounds", function(req, res){
     //get data from form and add to campground array
     var name = req.body.name;
@@ -49,8 +51,15 @@ app.post("/campgrounds", function(req, res){
     res.redirect("/campgrounds");
 });
 
+//NEW ROUTE - show form to create new campground
 app.get("/campgrounds/new", function (req, res) {
    res.render("new"); 
+});
+
+app.get("/campgrounds/:id", function (req, res) {
+    //find the campground with provided ID
+    //render show template with that campground
+    res.send("THIS WILL BE THE SHOW PAGE ONE DAY!");
 });
 
 app.listen(8080, "localhost", function () {

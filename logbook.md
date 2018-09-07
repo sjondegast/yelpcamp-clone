@@ -90,9 +90,32 @@ app.get("/campgrounds", function(req, res) {
 });
 - the campgrounds from the callbackfunctions inside Campground.find() revers to the line at the end of -> res.render("campgrounds", {campgrounds: campgrounds});
 
+- add new campground to DB inside of app.post("/campgrounds", function(req, res) in app.js:
+
+Campground.create(newCampground, function (err, newCampground) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("ADDED NEW CAMPGROUND TO DB: ");
+        console.log(newCampground);
+    }
+});
+
+- add new RESTFULL route, SHOW and this will show details about one campground
+app.get("/campgrounds/:id", function (req, res) {
+    res.send("THIS WILL BE THE SHOW PAGE ONE DAY!");
+});
+#this needs to be after campgrounds/new route because otherwise it will be treated as campgrounds/:id!!!!!
 
 
+RESTFUL ROUTES
 
+name    url                 verb    desc
+==========================================================
+INDEX   /campgrounds        GET     Display a list of all campgrounds
+NEW     /campgrounds/new    GET     Display a form to make a new campground
+CREATE  /campgrounds        POST    Add new campground to DB
+SHOW    /campgrounds/:id    GET     Shows info about one campground
 
 
 ----- Q&A ----
