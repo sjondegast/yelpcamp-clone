@@ -36,7 +36,15 @@ app.post("/campgrounds", function(req, res){
     var name = req.body.name;
     var image = req.body.image;
     var newCampground = {name: name, image: image};
-    campgrounds.push(newCampground);
+    // add new campground from newCampground var to mongoDB yelp_camp and run callback function.
+    Campground.create(newCampground, function (err, newCampground) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("ADDED NEW CAMPGROUND TO DB: ");
+            console.log(newCampground);
+        }
+    });
     //redirect back to campgrounds page
     res.redirect("/campgrounds");
 });
