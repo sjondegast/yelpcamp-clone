@@ -58,6 +58,30 @@ mongod, mongo, help, show dbs, use, insert, find, update, remove
 example: > --help will provide info
         > db.use.nameOfDatabase
 
+7 Sept 2018 -- adding Mongoose
+- new git branch + change to new branch: 
+git checkout -b addingMongoose
+- install mongoose:
+npm install mongoose --save
+- check package.json for mongoose
+- var mongoose require: 
+var mongoose = require("mongoose");
+- mongoose.connect: 
+mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
+- got error because the server/database wasn't started...
+- campgroundSchema:
+var campgroundSchema = new mongoose.Schema({
+    name: String,
+    image: String
+});
+- var Campground model en schema eraan toevoegen, use capital letters for var! 
+var Campground = mongoose.model("Campground", campgroundSchema);
+
+
+
+
+
+
 
 ----- Q&A ----
 what is package-lock.json?
