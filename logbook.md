@@ -76,7 +76,19 @@ var campgroundSchema = new mongoose.Schema({
 });
 - var Campground model en schema eraan toevoegen, use capital letters for var! 
 var Campground = mongoose.model("Campground", campgroundSchema);
-
+- removed the array with campgrounds
+- changed app.get and set it up to use the db yelp_camp and used campgrounds.find() to get all the objects from the array.
+app.get("/campgrounds", function(req, res) {
+    // Get all campgrounds from DB: Campgrounds.find()
+    Campground.find({}, function (err, campgrounds) {
+       if (err) {
+           console.log(err);           
+       } else {
+           res.render("campgrounds", {campgrounds: campgrounds});
+       }
+    });
+});
+- the campgrounds from the callbackfunctions inside Campground.find() revers to the line at the end of -> res.render("campgrounds", {campgrounds: campgrounds});
 
 
 

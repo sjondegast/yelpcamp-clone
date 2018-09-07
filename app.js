@@ -16,38 +16,19 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
-Campground.create(
-    { 
-        name: "Granite Hill", 
-        image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" 
-
-    }, function (err, campground) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("NEWLY CREATED CAMPGROUND: ");
-            console.log(campground);
-        }
-    });
-
-var campgrounds = [
-    { name: "Salmon Creek", image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" },
-    { name: "Granite Hill", image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" },
-    { name: "Mountain Goat's Rest", image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" },
-    { name: "Salmon Creek", image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" },
-    { name: "Granite Hill", image: "https://farm8.staticflickr.com/7338/9627572189_12dbd88ebe.jpg" },
-    { name: "Mountain Goat's Rest", image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" },
-    { name: "Salmon Creek", image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" },
-    { name: "Granite Hill", image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" },
-    { name: "Mountain Goat's Rest", image: "https://farm3.staticflickr.com/2580/3942698066_9157ac5123.jpg" }
-];
-
 app.get("/", function (req, res) {
     res.render("landing");   
 });
 
 app.get("/campgrounds", function(req, res) {
-    res.render("campgrounds", {campgrounds: campgrounds});
+    // Get all campgrounds from DB: Campgrounds.find()
+    Campground.find({}, function (err, campgrounds) {
+       if (err) {
+           console.log(err);           
+       } else {
+           res.render("campgrounds", {campgrounds: campgrounds});
+       }
+    });
 });
 
 app.post("/campgrounds", function(req, res){
