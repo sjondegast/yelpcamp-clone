@@ -17,20 +17,20 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
-Campground.create(
-    {
-        name: "Granite Hill",
-        image: "https://www.justahead.com/wp-content/uploads/2015/08/madison-campground-11.jpg",
-        description: "Holy shit that animal is big, is it not?!"
-    }, function (err, campground) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("NEWLY CREATED CAMPGROUND: ");
-            console.log(campground);
-        }
-    }
-);
+// Campground.create(
+//     {
+//         name: "Granite Hill",
+//         image: "https://www.justahead.com/wp-content/uploads/2015/08/madison-campground-11.jpg",
+//         description: "Holy shit that animal is big, is it not?!"
+//     }, function (err, campground) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log("NEWLY CREATED CAMPGROUND: ");
+//             console.log(campground);
+//         }
+//     }
+// );
 
 app.get("/", function (req, res) {
     res.render("landing");   
@@ -72,6 +72,7 @@ app.get("/campgrounds/new", function (req, res) {
    res.render("new"); 
 });
 
+//SHOW - shows more info about one campground
 app.get("/campgrounds/:id", function (req, res) {
     //find the campground with provided ID
     //render show template with that campground
