@@ -43,7 +43,7 @@ app.get("/campgrounds", function(req, res) {
        if (err) {
            console.log(err);           
        } else {
-           res.render("campgrounds", {campgrounds: campgrounds});
+           res.render("index", {campgrounds: campgrounds});
        }
     });
 });
@@ -53,7 +53,8 @@ app.post("/campgrounds", function(req, res){
     //get data from form and add to campground array
     var name = req.body.name;
     var image = req.body.image;
-    var newCampground = {name: name, image: image};
+    var description = req.body.description;
+    var newCampground = {name: name, image: image, description: description};
     // add new campground from newCampground var to mongoDB yelp_camp and run callback function.
     Campground.create(newCampground, function (err, newCampground) {
         if (err) {
@@ -75,8 +76,14 @@ app.get("/campgrounds/new", function (req, res) {
 //SHOW - shows more info about one campground
 app.get("/campgrounds/:id", function (req, res) {
     //find the campground with provided ID
-    //render show template with that campground
-    res.send("THIS WILL BE THE SHOW PAGE ONE DAY!");
+    Campground.findById(req.params.id, function (err, foundCampground) {
+        if (err) {
+            console.log(err);
+        } else {
+            //render show template with that campground
+            res.render("show", {campground: foundCampground});
+        }
+    });
 });
 
 app.listen(8080, "localhost", function () {
