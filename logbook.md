@@ -141,7 +141,7 @@ app.get("/campgrounds/:id", function (req, res) {
 - render show page:
 res.render("show");
 - create template:
-terminal: touch views/show.ejs
+terminal: touch views/show.ejs and added template plus header, footer html
 
 
 
