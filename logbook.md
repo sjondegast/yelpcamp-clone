@@ -143,6 +143,20 @@ res.render("show");
 - create template:
 terminal: touch views/show.ejs and added template plus header, footer html
 
+- added show route to app.js earlier and added code to show the template show if you push a btn inside of the template
+//SHOW - shows more info about one campground
+app.get("/campgrounds/:id", function (req, res) {
+    //find the campground with provided ID
+    Campground.findById(req.params.id, function (err, foundCampground) {
+        if (err) {
+            console.log(err);
+        } else {
+            //render show template with that campground
+            res.render("show", {campground: foundCampground});
+        }
+    });
+});
+
 
 
 
