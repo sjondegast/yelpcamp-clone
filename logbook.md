@@ -157,10 +157,6 @@ app.get("/campgrounds/:id", function (req, res) {
     });
 });
 
-
-
-
-
 RESTFUL ROUTES
 
 name    url                 verb    desc
@@ -175,4 +171,10 @@ SHOW    /campgrounds/:id    GET     Shows info about one campground
 what is package-lock.json?
 VS Code code completion for node, express etc.
 VS Visual Code, how to set it up correctly?!
+
+# Comments Section 31
+    * Refactoring
+        -  Create a models directory
+        - Use module.exports inside the models
+        - Require everything correctly in app.js
 
