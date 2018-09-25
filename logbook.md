@@ -178,5 +178,7 @@ VS Visual Code, how to set it up correctly?!
         - Use module.exports inside the models
         - Require everything correctly in app.js
     * Seeding the Database - adding in sample data, checking if the comments works without making comments.
-        - 
+        - Remove all campgrounds seeds.js
+        - changed remove to deleteMany because remove is depricated
+        - add campground data to db at re-start app.js inside of seeds.js
 
