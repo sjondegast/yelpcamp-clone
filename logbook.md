@@ -181,4 +181,6 @@ VS Visual Code, how to set it up correctly?!
         - Remove all campgrounds seeds.js
         - changed remove to deleteMany because remove is depricated
         - add campground data to db at re-start app.js inside of seeds.js
+        - comments.Schema + comments array with id's inside campground.Schema
+        - TODO WO: show comments inside of show template
 
