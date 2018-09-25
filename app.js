@@ -1,27 +1,12 @@
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
-var Campground = require("./models/campground");
+var express         = require("express"),
+    app             = express(),        
+    bodyParser      = require("body-parser"),                   
+    mongoose        = require("mongoose"),
+    Campground      = require("./models/campground")
 
 mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
-// Campground.create(
-//     {
-//         name: "Granite Hill",
-//         image: "https://www.justahead.com/wp-content/uploads/2015/08/madison-campground-11.jpg",
-//         description: "Holy shit that animal is big, is it not?!"
-//     }, function (err, campground) {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             console.log("NEWLY CREATED CAMPGROUND: ");
-//             console.log(campground);
-//         }
-//     }
-// );
 
 app.get("/", function (req, res) {
     res.render("landing");   
