@@ -177,4 +177,6 @@ VS Visual Code, how to set it up correctly?!
         -  Create a models directory
         - Use module.exports inside the models
         - Require everything correctly in app.js
+    * Seeding the Database - adding in sample data, checking if the comments works without making comments.
+        - 
 
