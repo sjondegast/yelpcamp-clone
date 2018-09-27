@@ -182,5 +182,9 @@ VS Visual Code, how to set it up correctly?!
         - changed remove to deleteMany because remove is depricated
         - add campground data to db at re-start app.js inside of seeds.js
         - comments.Schema + comments array with id's inside campground.Schema
-        - TODO WO: show comments inside of show template
+        - TODO WO: show comments inside of show template 
+    * Creating Comments NEW/Create
+        - Discuss nested routes
+        - Add the comment new and create routes
+        - Add the new comment form
 
