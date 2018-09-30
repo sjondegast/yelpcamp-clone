@@ -100,9 +100,6 @@ app.post("/campgrounds/:id/comments", function (req, res) {
             });
         }
     });
-    //create new comment
-    //connect new comment to campground
-    //redirect to campground showpage
 });
 
 app.listen(8080, "localhost", function () {
