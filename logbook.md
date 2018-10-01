@@ -188,12 +188,4 @@ VS Visual Code, how to set it up correctly?!
         - Add the comment new and create routes
         - Add the new comment form
 
-# Authentication
-- Intro to Auth
-* What tools are using?
-    * Passport
-    * Passport Local
-    * Passport local Mongoose
-* Walk through auth flow
-* Discuss sessions
-    * Express-Session
+
