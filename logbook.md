@@ -188,4 +188,8 @@ VS Visual Code, how to set it up correctly?!
         - Add the comment new and create routes
         - Add the new comment form
 
+#Add User Model
+* Install all packages needed for auth
+* Define User Model
+
 
