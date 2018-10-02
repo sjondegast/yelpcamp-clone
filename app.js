@@ -36,8 +36,8 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(indexRoutes);
-app.use(campgroundRoutes);
+app.use("/", indexRoutes);
+app.use("/campgrounds", campgroundRoutes);
 app.use(commentRoutes);
 
 app.listen(8080, "localhost", function () {
