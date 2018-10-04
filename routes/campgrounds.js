@@ -24,10 +24,15 @@ router.post("/",isLoggedIn, function (req, res) {
     var name = req.body.name;
     var image = req.body.image;
     var description = req.body.description;
+    var author = {
+        id: req.user._id,
+        username: req.user.username
+    };
     var newCampground = {
         name: name,
         image: image,
-        description: description
+        description: description,
+        author: author
     };
     // add new campground from newCampground var to mongoDB yelp_camp and run callback function.
     Campground.create(newCampground, function (err, newCampground) {
