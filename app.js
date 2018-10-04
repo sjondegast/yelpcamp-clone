@@ -38,7 +38,7 @@ app.use(function (req, res, next) {
 
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
-app.use(commentRoutes);
+app.use("/campgrounds/:id/comments", commentRoutes);
 
 app.listen(8080, "localhost", function () {
     console.log("YelpCamp Server Has Started");
