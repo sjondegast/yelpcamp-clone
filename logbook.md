@@ -192,4 +192,18 @@ VS Visual Code, how to set it up correctly?!
 * Install all packages needed for auth
 * Define User Model
 
+#Editing Campgrounds
+* Add Method-Override
+    - Method-Override reverse to PUT request, this isn't supported by html because this only knows GET and POST #restful routes video for more indept info
+    - npm install method-override --save
+* Add Edit Route for Campgrounds
+    - we need a form to edit, and this form has to submit somewhere -> so the edit route is the form template and form has to submit somewhere witch is the update route
+    the update route is the
+    - require it first: methodOverride  = require("method-override"),
+    - app.use(methodOverride("_method)); 
+* Add Link to Edit page
+* Add Update Route
+* Fix $set problem
+
+#Deleting Campgrounds
 
