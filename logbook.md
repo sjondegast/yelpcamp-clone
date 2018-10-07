@@ -207,3 +207,8 @@ VS Visual Code, how to set it up correctly?!
 
 #Deleting Campgrounds
 
+#Authorizaton
+* User can only edit his/her campgrounds
+* User can only delete his/her campgrounds
+* Hide/Show edit and delete buttons
+
