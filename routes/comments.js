@@ -40,6 +40,11 @@ router.post("/", isLoggedIn, function (req, res) {
     });
 });
 
+// COMMENT EDIT ROUTE - SHOW FORM
+router.get("/:comment_id/edit", function (req, res) {
+    res.render("comments/edit");
+});
+
 //MIDDLEWARE
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
