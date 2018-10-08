@@ -34,6 +34,7 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// because of app.use this will be available in every document/template!
 app.use(function (req, res, next) {
     res.locals.user = req.user;
     next();
