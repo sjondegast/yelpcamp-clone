@@ -64,6 +64,7 @@ router.put("/:comment_id", function (req, res) {
    }); 
 });
 
+// DELETE ROUTE
 router.delete("/:comment_id", function (req, res) {
    Comment.findByIdAndRemove(req.params.comment_id, function (err) {
        if (err) {
@@ -80,6 +81,25 @@ function isLoggedIn(req, res, next) {
         return next();
     }
     res.redirect("/login");
+};
+
+function checkCommentsOwnership(req, res, next) {
+    if (req.isAuthenticated()) {
+        Comment.findById(req.params.comment_id, function (err, comment) {
+            if (err) {
+                res.redirect("back");
+            } else {
+                // does user own the campgrounds if so run the code below, otherwise redirect
+                if (comment.author.id.equals(req.user._id)) {
+                    next();
+                } else {
+                    res.redirect("back");
+                }
+            }
+        });
+    } else {
+        res.redirect("back");
+    }
 };
 
 module.exports = router;
