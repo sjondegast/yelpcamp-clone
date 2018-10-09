@@ -64,6 +64,10 @@ router.put("/:comment_id", function (req, res) {
    }); 
 });
 
+router.delete("/:comment_id", function (req, res) {
+   findByIdAndRemove() 
+});
+
 //MIDDLEWARE
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
