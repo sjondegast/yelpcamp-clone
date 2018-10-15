@@ -9,6 +9,7 @@ var express         = require("express"),
     Comment         = require("./models/comment"),
     User            = require("./models/user"),
     flash           = require("connect-flash"),
+    moment          = require("moment"),
     seedDB          = require("./seeds");
 
 //REQUIRING ROUTES
@@ -39,6 +40,7 @@ passport.deserializeUser(User.deserializeUser());
 
 // because of app.use this will be available in every document/template!
 app.use(function (req, res, next) {
+    res.locals.moment = moment;
     res.locals.user = req.user;
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");

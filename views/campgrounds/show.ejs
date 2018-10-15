@@ -30,7 +30,7 @@
                     </div>
                     <p>
                         <em>Submitted By:
-                            <%= campground.author.username %></em>
+                            <%= campground.author.username %>, <%= moment(campground.createdAt).format("ddd, hA") %></em>
                     </p>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     <div class="col-md-12">
                         <strong>
                             <%= comment.author.username %></strong>
-                        <span class="pull-right">10 Days Ago</span>
+                        <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
                         <p>
                             <%= comment.text %>
                         </p>
