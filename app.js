@@ -18,7 +18,10 @@ var commentRoutes       = require("./routes/comments"),
     indexRoutes         = require("./routes/index");
 
 // APP CONFIGURATION
-mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
+mongoose.connect('mongodb://sjondegast:2526BE@ds233323.mlab.com:33323/yelpcamp', {
+    useNewUrlParser: true
+});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -52,7 +55,13 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(8080, "localhost", function () {
-    console.log("YelpCamp Server Has Started");
+//  LOCAL SETUP, RUN LOCALLY @ LOCALHOST DO NOT USE FOR PRODUCTION
+// app.listen(8080, "localhost", function () {
+//     console.log("YelpCamp Server Has Started");
+// });
+
+//  PRODUCTION APP.LISTEN FOR HEROKU 
+app.listen(process.env.PORT, process.env.IP, function () {
+    console.log("Yelpcamp server has Started!");
 });
 
