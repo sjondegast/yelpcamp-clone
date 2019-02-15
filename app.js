@@ -56,12 +56,12 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 //  LOCAL SETUP, RUN LOCALLY @ LOCALHOST DO NOT USE FOR PRODUCTION
-// app.listen(8080, "localhost", function () {
-//     console.log("YelpCamp Server Has Started");
-// });
+app.listen(8080, "localhost", function () {
+    console.log("YelpCamp Server Has Started");
+});
 
 //  PRODUCTION APP.LISTEN FOR HEROKU 
-app.listen(process.env.PORT, process.env.IP, function () {
-    console.log("Yelpcamp server has Started!");
-});
+// app.listen(process.env.PORT, process.env.IP, function () {
+//     console.log("Yelpcamp server has Started!");
+// });
 
